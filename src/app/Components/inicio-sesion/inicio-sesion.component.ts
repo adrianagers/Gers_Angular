@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
@@ -7,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor( ) { }
 
   ngOnInit(): void {
   }
