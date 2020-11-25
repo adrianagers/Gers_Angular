@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './Components/menu/menu.component';
@@ -27,6 +28,7 @@ import { OlvidarpasswordComponent } from './Components/olvidarpassword/olvidarpa
 import { RegistroUserComponent } from './Components/registro-user/registro-user.component';
 import { TarjetasUserComponent } from './Components/tarjetas-user/tarjetas-user.component';
 import { TarjetasCompanyComponent } from './Components/tarjetas-company/tarjetas-company.component';
+import { from } from 'rxjs';
 
 const routesApp: Routes = [
   {path: '', component: HomePrincipalComponent},
@@ -78,7 +80,9 @@ const routesApp: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routesApp)
+    RouterModule.forRoot(routesApp),
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
