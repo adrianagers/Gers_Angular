@@ -20,13 +20,17 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/coody.png",
               "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/menu.js",
+              "src/menuMorse.js",
+              "src/categorias.js"
+            ]
           },
           "configurations": {
             "production": {

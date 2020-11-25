@@ -1,0 +1,161 @@
+ <!-- galeria de los mejores postulantes -->
+ <h3 style="margin-top: 110px;text-align: center;">Aqui puedes encontrar a <br><b>los mejores programadores 👍</b> para
+   tu empresa </h3>
+   <!-- buscador -->
+   <div class="container">
+     <div class="row">
+       <div class="col-sm">
+       </div>
+       <div class="col-sm-8">
+         <div class="container mt-5 ">
+           <input type="text" id="formulario" class="form-control col-sm-10 " style="position: absolute; margin-left: 8%;">
+           <button class="btn btn-info mb-2" id="boton" style="position: relative; margin-left:91% ;  "><i
+               class="fas fa-search"></i></button>
+           <ul id="resultado">
+
+           </ul>
+         </div>
+       </div>
+       <div class="col-sm">
+       </div>
+     </div>
+   </div>
+
+   <script>
+     const empresas = [{
+         nombre: 'php'
+       },
+       {
+         nombre: 'JavaScript'
+       },
+       {
+         nombre: 'Java'
+       },
+       {
+         nombre: 'Docker'
+       },
+       {
+         nombre: 'Python '
+       }
+
+     ]
+     const formulario = document.querySelector('#formulario');
+     const boton = document.querySelector('#boton');
+     const resultado = document.querySelector('#resultado');
+     const filtrar = () => {
+       //console.log(formulario.value);
+       resultado.innerHTML = '';
+       const texto = formulario.value.toLowerCase();
+       for (let empresa of empresas) {
+         let nombre = empresa.nombre.toLowerCase();
+         if (nombre.indexOf(texto) !== -1) {
+           resultado.innerHTML += ` 
+                    <li>${empresa.nombre}</li>
+                    `
+         }
+       }
+       if (resultado.innerHTML === '') {
+         resultado.innerHTML += `
+                <li>Empresa no encontrada...</li>
+                `
+       }
+     }
+     boton.addEventListener('click', filtrar)
+     formulario.addEventListener('keyup', filtrar)
+
+     filtrar();
+
+   </script>
+   <!-- fin buscador -->
+   <div class="galeria-port mt-5">
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/empresa.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Diseñador y desarrollador de programas.</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/equipo.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Analista de sistemas.</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/of.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Programador web.</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+
+   </div><br><br>
+   <div class="galeria-port">
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/office.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Desarrollador de software</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/student.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Diseñador de programas y aplicaciones</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-3 ">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/tra.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Master en seguridad informatica</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+
+   </div><br><br>
+   <div class="galeria-port ultimasTajetas">
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/trabajo.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Ingeniero de sistemas</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/of.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Desarrollador en aplicaciones web.</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <div class="card" style="width: 18rem;">
+         <img src="assets/image/recutador/student.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">Creador de paginas web.</p>
+           <a href="../perfil_Usuario" class="btn btn-primary">ver perfil</a>
+         </div>
+       </div>
+     </div>
+
+   </div>
+
