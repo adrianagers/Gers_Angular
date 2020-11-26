@@ -4,8 +4,7 @@
       <div class="col-lg-6 imagen"
         style="background: linear-gradient(to right, #191b1bd9, #1d1d1aa8), url(assets/image/registroEmpresa/typewriter-801921_1280.jpg);">
         <div><img src="assets/image/registroEmpresa/LOGO-OSCURO.png" alt="" width="200px" style="margin-left:9%;"></div>
-
-        <div class="caption ">
+          <div class="caption ">
           <section>
             <h3 class=" letraImagen">¡Sí, Ya estas Registrado!</h3>
           </section>
@@ -74,7 +73,7 @@
                   <option>Soacha</option>
                   <option>Soledad</option>
                 </select>
-              </div>
+              </div> 
             </div>
             <div class="form-row contenedorCompleto">
               <div class="form-group col-md-4">
@@ -85,10 +84,9 @@
               <div class="form-group col-md-4">
                 <label for="inputEmail4">Ingresar Contraseña</label>
                 <input formControlName="password" type="password" class="form-control" id="inputEmail4" required>
-                <p  *ngIf= "singUpForm.get('password').hasError('minlength')" class="alertaRegistro">La contraseña debe ser mas de 6  caracteres </p>
+                <p  *ngIf= "singUpForm.get('password').hasError('minlength')" class="alertaRegistro">La Contraseña debe ser más de 6 Carácteres </p>
               </div>
             </div>
-
             <div class="input-group todoAceptoterminos">
               <div class="input-group-prepend">
                 <div class="input-group-text">
@@ -97,9 +95,8 @@
               </div>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Acepta las políticas de privacidad</button>
+                Acépto las políticas de privacidad</button>
             </div>
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
@@ -199,19 +196,12 @@
               </div>
             </div>
             <br>
-
             <div class="contenedorCompleto">
               <button class="btn colorBoton mt-3">Registrate</button>
             </div>
-
-
           </form>
-
         </div>
-
       </div>
     </div>
   </div>
-
-
 </section>

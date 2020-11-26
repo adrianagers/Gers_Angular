@@ -1,0 +1,66 @@
+/*Estilo de Navegador y carusel*/
+.articulo {
+    margin: 40px;
+    padding: 35px;
+    background: rgba(162, 0, 255, 0.295);
+}
+.height-carousel {
+    max-height: 600px;
+    min-width: 100%;
+}
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.group-color {
+    background: #00000073;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.group--color .containers {
+    background: #38383af1;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.margin__title {
+    margin: 15px;
+    font-size: 1.8em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 100;
+}
+.main__txt {
+    padding: 8px;
+    text-align: center;
+}
+.btn-primary {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    border-color: white;
+    background: linear-gradient(180deg, #32c953d5 0%, #46c7d8c4 100%);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.btn-lg {
+    text-align: right;
+    justify-content: center;
+}
+a.ejemplo1 {
+    background: linear-gradient(180deg, #32c953 0%, #46c7d8 100%);
+    color: black;
+}
+.container-footer {
+    width: 100%;
+    background:#333366;
+    padding: 10px;
+}
+.main__about__description {
+    flex-wrap: wrap;
+}
