@@ -36,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
 const routesApp: Routes = [
   {path: '', component: HomePrincipalComponent},
   {path: 'perfilEmpreas', component: PerfilEmpresaComponent},
-  {path: 'singUp', component: InicioSesionComponent},
+  {path: 'login', component: InicioSesionComponent},
   {path: 'nosotros', component: MorseComponent},
   {path: 'recuperarpassword', component: OlvidarpasswordComponent},
   {path: 'crearOferta', component: OfertasComponent},
@@ -48,10 +48,11 @@ const routesApp: Routes = [
   {path: 'homeUser', component: HomeUserComponent},
   {path: 'ModificarDatos/User', component: ModificarDatosUserComponent},
   {path: 'notificacion/User', component: NotificacionesUserComponent},
-  {path: 'perfil/User', component: PerfilUserComponent},
+  {path: 'perfil/User', data: { only: 'Programador' },component: PerfilUserComponent},
   {path: 'losMejoresProgramadores/reclutar', component: ReclutadorComponent},
   {path: 'registroCompany', component: RegistroEmpresaComponent},
   {path: 'registroUser', component: RegistroUserComponent}
+
 ];
 
 @NgModule({
