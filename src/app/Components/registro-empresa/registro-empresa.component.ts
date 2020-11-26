@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
+import {CompanyService} from '../../Services/company.service';
 
 @Component({
   selector: 'app-registro-empresa',
@@ -8,32 +9,43 @@ import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 })
 export class RegistroEmpresaComponent implements OnInit {
 
-  singUpForm: FormGroup ; //permite indical las validaciones  que se crearan
+  signUpForm: FormGroup //permite indical las validaciones  que se crearan
 
   constructor(
-    private formBuilder: FormBuilder
-  ) { this.validator(); }
+    private formBuilder: FormBuilder,
+    private CompanyService: CompanyService,
+  ) {
+    this.Validator()
+  }
 
   ngOnInit(): void {
   }
-  validator(){
-    this.singUpForm = this.formBuilder.group({
+  Validator(){
+    this.signUpForm = this.formBuilder.group({
       nameCompany: ['', Validators.required],
+      phoneCompany: ['', Validators.required],
       nitCompany: ['', [ Validators.required, Validators.minLength(9)]],
       email: ['', [ Validators.required, Validators.email ]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      role: ['Company', Validators.required],
-      phoneCompany: ['', Validators.required],
-      namepush: ['', Validators.required]
+      role: ['Company',]
 
     });
 
   }
-  saveCompany(){
-    if (this.singUpForm.valid){
-      alert('Se registro exitosamente');
-    }else{
-      alert('El formulario no es valido ');
+  saveCompany() {
+    if (this.signUpForm.valid) {
+      console.log
+      this.CompanyService.createCompany(this.signUpForm.value).subscribe(
+        (companyCreated) => {
+          console.log(companyCreated)
+          alert('Empresa creada correctamente')
+        },
+        (error) => {
+          console.error('Tuvimos un error ->', error)
+        }
+      );
+    } else {
+      alert('El formulario no es valido ')
     }
   }
 }

@@ -16,7 +16,7 @@
             </div>
             <div class="textLadoIcon">
 
-              <button type="submit" class="btn colorRegistro mt-3"> <a routerLink="/singUp"
+              <button type="submit" class="btn colorRegistro mt-3"> <a routerLink="/login"
                   style="text-decoration: none; color: white;">Inicio Sesión!</a></button>
             </div>
           </div>
@@ -24,34 +24,14 @@
       </div>
       <div class="col-lg-6  contenedorCompleto">
         <div>
-          <form [formGroup]="singUpForm" (ngSubmit)="saveCompany()">
+          <form [formGroup]="signUpForm" (ngSubmit)="saveCompany()">
             <h2 class="contenedorCompleto">Regístrate Como Empresa</h2><br>
-
             <div class="form-row contenedorCompleto">
-              <div class="form-group col-md-4">
-                <label for="inputAddress">Nombre Completo </label>
-                <input formControlName="namepush" type="text" class="form-control" placeholder="Ingrese Nombre"
-                  required>
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputAddress2">Nit</label>
-                <input formControlName="nitCompany" type="text" class="form-control" placeholder="Ex: 890111000">
-                <!-- <p  *ngIf= "singUpForm.get('nitCompany')" class="alertaRegistro">Solo numeros sin guines ni espacios  </p> -->
-              </div>
-              <div class="form-group col-md-6 emailclass">
-                <label for="inputEmail4">Email</label>
-                <input formControlName="email" type="email" class="form-control" placeholder="name@example.com"
-                  required>
-                  <p class="alertaRegistro" *ngIf= "singUpForm.get('email').hasError('email')" >El correo electronico es incorrecto</p>
-              </div>
-            </div>
-
-            <div class="form-row contenedorCompleto">
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-8">
                 <label for="inputCity">Nombre de la empresa</label>
                 <input formControlName="nameCompany" type="text" class="form-control" id="inputCity" required>
               </div>
-              <div class="form-group col-md-4">
+              <!-- <div class="form-group col-md-4">
                 <label for="inputState">Ubicación </label>
                 <select id="inputState" type="text" class="form-control">
                   <option selected>Bogotá D.C</option>
@@ -73,7 +53,8 @@
                   <option>Soacha</option>
                   <option>Soledad</option>
                 </select>
-              </div> 
+              </div>  -->
+
             </div>
             <div class="form-row contenedorCompleto">
               <div class="form-group col-md-4">
@@ -82,8 +63,25 @@
                   placeholder="Nueva Contraseña" required>
               </div>
               <div class="form-group col-md-4">
+                <label for="inputAddress2">Nit</label>
+                <input formControlName="nitCompany" type="text" class="form-control" placeholder="Ex: 890111000">
+                <p *ngIf="signUpForm.get('nitCompany')" class="alertaRegistro">Solo numeros sin guines ni espacios </p>
+              </div>
+            </div>
+            <div class="form-row contenedorCompleto">
+
+              <div class="form-group col-md-6 emailclass">
+                <label for="inputEmail4">Email</label>
+                <input formControlName="email" type="email" class="form-control" placeholder="name@example.com"
+                  required>
+                <p *ngIf="signUpForm.get('email').hasError('email')" class="error-message">El correo electronico es
+                  incorrecto </p>
+
+              </div>
+              <div class="form-group col-md-4">
                 <label for="inputEmail4">Ingresar Contraseña</label>
                 <input formControlName="password" type="password" class="form-control" id="inputEmail4" required>
+
                 <p  *ngIf= "singUpForm.get('password').hasError('minlength')" class="alertaRegistro">La Contraseña debe ser más de 6 Carácteres </p>
               </div>
             </div>
