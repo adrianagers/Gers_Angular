@@ -1,1 +1,46 @@
-<p>buscador works!</p>
+<div class="container mt-5 text-center">
+    <h1>Buscador Coody</h1>
+    <input type="text" id="formulario" class="form-control my-2">
+    <button class="btn btn-info btn-dark mb-2" id="boton">Buscar</button>
+    <ul id="resultado">
+    
+    </ul>
+</div>
+<script>
+    const empresas =[
+        {nombre: 'Programador Jr' , nit: 12456598, text: 321719, },
+        {nombre: 'Programador Php' , nit: 45457896, text: 'En Busca de Programador Web Conocimiento en Php', },
+        {nombre: 'Programador en Estilos Css' , nit: 78965212, text: 8209402, },
+        {nombre: 'Programador en MySQl y Base de Datos' , nit: 96855263, text: 8209402, },
+        {nombre: 'Programador en Ruby' , nit: 47859620, text: 8209402, },
+        {nombre: 'Programador en Html' , nit: 78459632, text: 8209402, },
+        {nombre: 'Programador en JavaScript' , nit: 91489220, text: 8209402, },
+        {nombre: 'Programador de Base de Datos' , nit: 30527878, text: 8209402, },
+        {nombre: 'Programador en Html y JavaScript' , nit: 46957852, text: 8209402, }  
+    ]
+    const formulario = document.querySelector('#formulario');
+    const boton = document.querySelector('#boton');
+    const resultado = document.querySelector('#resultado');
+    const filtrar = ()=>{
+        //console.log(formulario.value);
+        resultado.innerHTML='';
+        const texto = formulario.value.toLowerCase();
+        for(let empresa of empresas){
+            let nombre = empresa.nombre.toLowerCase();
+            if (nombre.indexOf(texto) !== -1) {
+                resultado.innerHTML += ` 
+                <li>${empresa.nombre} <b>- Nit:</b>  ${empresa.nit} <br> <b>-Descripción:</b>  ${empresa.text}</li>               `
+            }
+        }
+        if (resultado.innerHTML === '') {
+            resultado.innerHTML += `
+            <li> Empresa No Encontrada....</li>
+            `
+        }
+    }
+    boton.addEventListener('click', filtrar)
+    formulario.addEventListener('keyup', filtrar)
+    filtrar();
+</script><br><br>
+
+

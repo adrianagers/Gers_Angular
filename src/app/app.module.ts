@@ -29,6 +29,9 @@ import { OlvidarpasswordComponent } from './Components/olvidarpassword/olvidarpa
 import { RegistroUserComponent } from './Components/registro-user/registro-user.component';
 import { TarjetasUserComponent } from './Components/tarjetas-user/tarjetas-user.component';
 import { TarjetasCompanyComponent } from './Components/tarjetas-company/tarjetas-company.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+
+import { HttpClientModule } from '@angular/common/http';
 
 const routesApp: Routes = [
   {path: '', component: HomePrincipalComponent},
@@ -84,6 +87,8 @@ const routesApp: Routes = [
     RouterModule.forRoot(routesApp),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    AutocompleteLibModule,
     HttpClientModule
 
   ],
