@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
 import { StorageService } from '../../Services/storage.service';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';    
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
@@ -49,7 +49,7 @@ export class InicioSesionComponent implements OnInit {
       )
     } else {
       alert('Debes llenar todos los campos ')
-    }
+    } 
   }/* 
   loginCompany() {
  
