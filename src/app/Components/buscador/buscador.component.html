@@ -1,29 +1,9 @@
-<!--<div class="container mt-5 text-center">
+<div class="container mt-5 text-center">
     <h1>Buscador Coody</h1>
-
-    <ng-autocomplete 
-      [data]="data"
-      [searchKeyword]="keyword"
-      (selected)='selectEvent($event)'
-      [itemTemplate]="itemTemplate"
-      [notFoundTemplate]="notFoundTemplate">                                 
-    </ng-autocomplete>
-     
-    <ng-template #itemTemplate let-item>
-    <a [innerHTML]="item.name"></a>
-    </ng-template>
-     
-    <ng-template #notFoundTemplate let-notFound>
-    <div [innerHTML]="notFound"></div>
-    </ng-template>
-
-</div>-->
-<h1>Buscador Coody</h1>
-<div class="container mt-5">
     <input type="text" id="formulario" class="form-control my-2">
     <button class="btn btn-info btn-dark mb-2" id="boton">Buscar</button>
     <ul id="resultado">
-        
+    
     </ul>
 </div>
 <script>
@@ -36,8 +16,7 @@
         {nombre: 'Programador en Html' , nit: 78459632, text: 8209402, },
         {nombre: 'Programador en JavaScript' , nit: 91489220, text: 8209402, },
         {nombre: 'Programador de Base de Datos' , nit: 30527878, text: 8209402, },
-        {nombre: 'Programador en Html y JavaScript' , nit: 46957852, text: 8209402, }
-        
+        {nombre: 'Programador en Html y JavaScript' , nit: 46957852, text: 8209402, }  
     ]
     const formulario = document.querySelector('#formulario');
     const boton = document.querySelector('#boton');
@@ -50,8 +29,7 @@
             let nombre = empresa.nombre.toLowerCase();
             if (nombre.indexOf(texto) !== -1) {
                 resultado.innerHTML += ` 
-                <li>${empresa.nombre} <b>- Nit:</b>  ${empresa.nit} <br> <b>-Descripción:</b>  ${empresa.text}</li>
-                `
+                <li>${empresa.nombre} <b>- Nit:</b>  ${empresa.nit} <br> <b>-Descripción:</b>  ${empresa.text}</li>               `
             }
         }
         if (resultado.innerHTML === '') {
@@ -62,7 +40,6 @@
     }
     boton.addEventListener('click', filtrar)
     formulario.addEventListener('keyup', filtrar)
-
     filtrar();
 </script><br><br>
 
