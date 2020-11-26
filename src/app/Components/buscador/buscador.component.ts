@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscadorComponent implements OnInit {
   keyword = 'name';
-  data = any;
-  constructor(private info: InfoService) { }
+  data = 'any';
+  constructor() { }
 
   ngOnInit(): void {
     this.info.getInfo().subscribe(res => this.data = res);
