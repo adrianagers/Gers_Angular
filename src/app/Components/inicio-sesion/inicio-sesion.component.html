@@ -9,14 +9,14 @@
           Sesión</h2>
       </section>
 
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-group mt-4">
           <label for="inputAddress">Email</label>
-          <input type="text" class="form-control inputPeque" id="correoinput" placeholder="Correo" required>
+          <input formControlName="email" type="text" class="form-control inputPeque" id="correoinput" placeholder="Correo" required>
         </div>
         <div class="form-group mt-3">
           <label for="inputAddress">Contraseña</label>
-          <input type="password" class="form-control inputPeque" id="contrainput" placeholder="Contraseña" required>
+          <input formControlName="password" type="password" class="form-control inputPeque" id="contrainput" placeholder="Contraseña" required>
         </div>
 
         <div class="divBoton">

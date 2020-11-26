@@ -18,7 +18,7 @@
             </div>
             <div class="textLadoIcon">
 
-              <button type="submit" class="btn colorRegistro mt-3"> <a routerLink="/singUp"
+              <button type="submit" class="btn colorRegistro mt-3"> <a routerLink="/login"
                   style="text-decoration: none; color: white;">Inicio Sesión!</a></button>
             </div>
           </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="col-lg-6  contenedorCompleto">
         <div>
-          <form [formGroup]= "singUpForm" (ngSubmit)= "saveUser()">
+          <form [formGroup]="signUpForm" (ngSubmit)="saveUser()">
 
             <h2 class="contenedorCompleto">Regístrate!</h2><br>
 
@@ -43,7 +43,7 @@
               <div class="form-group col-md-6 emailclass ">
                 <label for="inputEmail4">Email</label>
                 <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="name@example.com" required>
-                <p  *ngIf= "singUpForm.get('email').hasError('email')" class="alertaRegistro">El correo electronico es incorrecto </p>
+                <p *ngIf="signUpForm.get('email').hasError('email')" class="error-message">El correo electronico es incorrecto </p>
               </div>
             </div>
 
@@ -81,11 +81,11 @@
               <div class="form-group col-md-4">
                 <label for="inputEmail4">Introduce Contraseña</label>
                 <input formControlName="password" type="password" class="form-control" id="password" placeholder="Nueva Contraseña" required>
-                <p  *ngIf= "singUpForm.get('password').hasError('minlength')" class="alertaRegistro">La contraseña debe ser mas de 6  caracteres </p>
+                <p *ngIf="signUpForm.get('password').hasError('minlength')" class="error-message"> La contraseña debe ser minimo de 6 caracteres</p>
               </div>
               <div class="form-group col-md-4">
                 <label for="inputEmail4">Repita Contraseña</label>
-                <input formControlName="phone" type="password" class="form-control" id="inputEmail4" required>
+                <input formControlName="password" type="password" class="form-control" id="inputEmail4" required>
               </div>
             </div>
 
