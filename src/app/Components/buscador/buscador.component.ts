@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit {
-
-  constructor() { }
+  keyword = 'name';
+  data = any;
+  constructor(private info: InfoService) { }
 
   ngOnInit(): void {
+    this.info.getInfo().subscribe(res => this.data = res);
   }
 
 }
